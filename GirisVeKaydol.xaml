@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.GirisVeKaydol"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="30" Padding="20">
+
+            <!-- Hoşgeldiniz Başlığı -->
+            <Label Text="Hoşgeldiniz!"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   HorizontalOptions="Center" />
+
+            <!-- Ana Çerçeve -->
+            <Frame CornerRadius="25"
+                   Padding="25"
+                   BackgroundColor="{DynamicResource FrameBackgroundColor}"
+                   HasShadow="True"
+                   WidthRequest="350">
+
+                <VerticalStackLayout Spacing="20">
+                    <!-- Giriş Ekranı -->
+                    <StackLayout x:Name="loginekran" IsVisible="True" Spacing="15">
+                        <!-- Email Girişi -->
+                        <Frame CornerRadius="15" Padding="10" BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                            <Entry x:Name="txtEmail"
+                                   Placeholder="Email"
+                                   Keyboard="Email"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{DynamicResource EntryTextColor}"
+                                   PlaceholderColor="{DynamicResource PlaceholderTextColor}"
+                                   FontSize="16" />
+                        </Frame>
+
+                        <!-- Şifre Girişi -->
+                        <Frame CornerRadius="15" Padding="10" BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                            <Entry x:Name="Password"
+                                   Placeholder="Şifre"
+                                   IsPassword="True"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{DynamicResource EntryTextColor}"
+                                   PlaceholderColor="{DynamicResource PlaceholderTextColor}"
+                                   FontSize="16" />
+                        </Frame>
+
+                        <!-- Giriş Yap Düğmesi -->
+                        <Button Text="Giriş Yap"
+                                BackgroundColor="{DynamicResource ButtonBackgroundColor}"
+                                TextColor="{DynamicResource ButtonTextColor}"
+                                CornerRadius="15"
+                                FontSize="18"
+                                HeightRequest="50"
+                                Clicked="LoginClicked" />
+
+                        <!-- Kayıt Ol Linki -->
+                        <Button Text="Hesabınız Yok mu? Kayıt Olun"
+                                BackgroundColor="Transparent"
+                                TextColor="{DynamicResource LinkTextColor}"
+                                FontSize="14"
+                                Clicked="KayitGirisEkrani" />
+                    </StackLayout>
+
+                    <!-- Kayıt Ekranı -->
+                    <StackLayout x:Name="kayitekran" IsVisible="False" Spacing="15">
+                        <Label Text="Kayıt Ol"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="{DynamicResource PrimaryTextColor}"
+                               HorizontalOptions="Center" />
+
+                        <!-- Kullanıcı Adı -->
+                        <Frame CornerRadius="15" Padding="10" BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                            <Entry x:Name="txtName"
+                                   Placeholder="Kullanıcı Adı"
+                                   Keyboard="Default"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{DynamicResource EntryTextColor}"
+                                   PlaceholderColor="{DynamicResource PlaceholderTextColor}"
+                                   FontSize="16" />
+                        </Frame>
+
+                        <!-- Email -->
+                        <Frame CornerRadius="15" Padding="10" BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                            <Entry x:Name="txtREmail"
+                                   Placeholder="Email"
+                                   Keyboard="Email"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{DynamicResource EntryTextColor}"
+                                   PlaceholderColor="{DynamicResource PlaceholderTextColor}"
+                                   FontSize="16" />
+                        </Frame>
+
+                        <!-- Şifre -->
+                        <Frame CornerRadius="15" Padding="10" BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                            <Entry x:Name="txtRPassword"
+                                   Placeholder="Şifre"
+                                   IsPassword="True"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{DynamicResource EntryTextColor}"
+                                   PlaceholderColor="{DynamicResource PlaceholderTextColor}"
+                                   FontSize="16" />
+                        </Frame>
+
+                        <!-- Kayıt Ol Düğmesi -->
+                        <Button Text="Kayıt Ol"
+                                BackgroundColor="{DynamicResource ButtonBackgroundColor}"
+                                TextColor="{DynamicResource ButtonTextColor}"
+                                CornerRadius="15"
+                                FontSize="18"
+                                HeightRequest="50"
+                                Clicked="RegisterClicked" />
+
+                        <!-- Giriş Ekranına Dön Linki -->
+                        <Button Text="Hesabınız Var mı? Giriş Yapın"
+                                BackgroundColor="Transparent"
+                                TextColor="{DynamicResource LinkTextColor}"
+                                FontSize="14"
+                                Clicked="KayitGirisEkrani" />
+                    </StackLayout>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

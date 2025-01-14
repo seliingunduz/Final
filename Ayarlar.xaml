@@ -1,0 +1,15 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.Ayarlar"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <VerticalStackLayout Padding="20">
+        <HorizontalStackLayout>
+            <Label Text="Koyu Tema"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   VerticalOptions="Center" />
+            <Switch x:Name="DarkModeSwitch"
+                    Toggled="OnDarkModeToggled" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

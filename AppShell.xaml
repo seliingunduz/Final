@@ -1,0 +1,37 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Final"
+       BackgroundColor="{DynamicResource BackgroundColor}"
+       x:Class="Final.AppShell">
+
+
+    <!-- Ana Sayfa -->
+    <FlyoutItem Title="Ana Sayfa" Icon="home.png">
+        <ShellContent Title="Ana Sayfa" ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Kurlar" Icon="change.png">
+        <ShellContent Title="Güncel Kurlar" ContentTemplate="{DataTemplate local:Kurlar}" />
+    </FlyoutItem>
+
+    <!-- Haberler -->
+    <FlyoutItem Title="Haberler" Icon="news.png">
+        <ShellContent Title="Haberler Sayfası" ContentTemplate="{DataTemplate local:Haber}" />
+    </FlyoutItem>
+
+    <!-- Hava Durumu -->
+    <FlyoutItem Title="Hava Durumu" Icon="hot.png">
+        <ShellContent Title="Hava Durumu Sayfası" ContentTemplate="{DataTemplate local:Hava}" />
+    </FlyoutItem>
+
+    <!-- Yapılacaklar -->
+    <FlyoutItem Title="Yapılacaklar" Icon="checklist.png">
+        <ShellContent Title="Yapılacaklar Sayfası" ContentTemplate="{DataTemplate local:Yapılacaklar}" />
+    </FlyoutItem>
+
+    <!-- Ayarlar -->
+    <FlyoutItem Title="Ayarlar" Icon="gear.png">
+        <ShellContent Title="Ayarlar Sayfası" ContentTemplate="{DataTemplate local:Ayarlar}" />
+    </FlyoutItem>
+
+</Shell>

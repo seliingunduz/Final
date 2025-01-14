@@ -1,0 +1,86 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.Yapılacaklar"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ContentPage.Resources>
+        <!-- Kart Stili -->
+        <Style x:Key="CardStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="Padding" Value="15" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
+        <!-- Buton Stili -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{DynamicResource ButtonTextColor}" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="20">
+            <!-- Başlık -->
+            <Label Text="Yapılacaklar Listesi" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="{DynamicResource PrimaryTextColor}" />
+
+            <!-- Görev Ekle Butonu -->
+            <Button Text="Görev Ekle" 
+                    BackgroundColor="{DynamicResource ButtonBackgroundColor}" 
+                    Style="{StaticResource ButtonStyle}" 
+                    Clicked="OnAddTaskClicked" />
+
+            <!-- Görev Listesi -->
+            <CollectionView x:Name="TaskCollectionView" 
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource CardStyle}">
+                            <VerticalStackLayout>
+                                <!-- Görev Adı -->
+                                <Label Text="{Binding Name}" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{DynamicResource PrimaryTextColor}" />
+
+                                <!-- Tarih ve Saat -->
+                                <Label Text="{Binding Date, StringFormat='Tarih: {0:dd.MM.yyyy}'}" 
+                                       FontSize="14" 
+                                       TextColor="{DynamicResource SecondaryTextColor}" />
+
+                                <!-- Görev Detayları -->
+                                <Label Text="{Binding Details}" 
+                                       FontSize="14" 
+                                       TextColor="{DynamicResource SecondaryTextColor}" 
+                                       LineBreakMode="WordWrap" />
+
+                                <!-- Düzenle ve Sil Butonları -->
+                                <HorizontalStackLayout Spacing="10" 
+                                                       HorizontalOptions="End">
+                                    <Button Text="Düzenle" 
+                                            BackgroundColor="{DynamicResource EditButtonColor}" 
+                                            Style="{StaticResource ButtonStyle}" 
+                                            CommandParameter="{Binding .}" 
+                                            Clicked="OnEditTask" />
+                                    <Button Text="Sil" 
+                                            BackgroundColor="{DynamicResource DeleteButtonColor}" 
+                                            Style="{StaticResource ButtonStyle}" 
+                                            CommandParameter="{Binding .}" 
+                                            Clicked="OnDeleteTask" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

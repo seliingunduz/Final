@@ -1,0 +1,67 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.GorevEkle"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ContentPage.Resources>
+        <!-- Butonlar için stil -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="15" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{DynamicResource ButtonTextColor}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <!-- Sayfa Başlığı -->
+            <Label Text="Görev Ekle" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="{DynamicResource PrimaryTextColor}" />
+
+            <!-- Görev Adı Girişi -->
+            <Frame CornerRadius="10" 
+                   Padding="10" 
+                   BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                <Entry x:Name="TaskEntry" 
+                       Placeholder="Görev adı girin" 
+                       FontSize="16" 
+                       TextColor="{DynamicResource EntryTextColor}" />
+            </Frame>
+
+            <!-- Görev Detayları Girişi -->
+            <Frame CornerRadius="10" 
+                   Padding="10" 
+                   BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                <Entry x:Name="DetailEntry" 
+                       Placeholder="Görev detayları girin" 
+                       FontSize="16" 
+                       TextColor="{DynamicResource EntryTextColor}" />
+            </Frame>
+
+            <!-- Tarih Seçici -->
+            <Frame CornerRadius="10" 
+                   Padding="10" 
+                   BackgroundColor="{DynamicResource EntryBackgroundColor}">
+                <DatePicker x:Name="DatePicker" 
+                            FontSize="16" 
+                            TextColor="{DynamicResource PrimaryTextColor}" />
+            </Frame>
+
+            <!-- Kaydet ve İptal Butonları -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Kaydet" 
+                        Style="{StaticResource ButtonStyle}" 
+                        Clicked="OnSubmitClicked" />
+                <Button Text="İptal" 
+                        Style="{StaticResource ButtonStyle}" 
+                        Clicked="OnCancelClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.MainPage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="CenterAndExpand">
+        <!-- Resim -->
+        <Image Source="selin.jpg"
+               HeightRequest="500"
+               WidthRequest="500"
+               Aspect="AspectFit"
+               HorizontalOptions="Center" />
+        
+        <!-- İsim -->
+        <Label Text="Selin Gündüz"
+               FontSize="30"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{DynamicResource PrimaryTextColor}" />
+
+        <!-- Üniversite Bilgisi -->
+        <Label Text="Bartın Üniversitesi Bilgisayar Mühendisliği"
+               FontSize="20"
+               HorizontalOptions="Center"
+               TextColor="{DynamicResource PrimaryTextColor}" />
+
+        <!-- Ödev Bilgisi -->
+        <Label Text="ÖDEV-2"
+               FontSize="18"
+               HorizontalOptions="Center"
+               TextColor="{DynamicResource PrimaryTextColor}" />
+    </VerticalStackLayout>
+</ContentPage>

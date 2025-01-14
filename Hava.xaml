@@ -1,0 +1,66 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.Hava"
+             Title="Hava Durumu"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ContentPage.Resources>
+        <Style x:Key="CityFrameStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+            <Setter Property="HasShadow" Value="True" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <!-- Başlık -->
+            <Label Text="Hava Durumu"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{DynamicResource PrimaryTextColor}" />
+
+            <!-- Şehir Ekleme Butonu -->
+            <Button Text="Şehir Ekle"
+                    BackgroundColor="{DynamicResource ButtonBackgroundColor}"
+                    TextColor="{DynamicResource ButtonTextColor}"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Clicked="OnAddCityClicked" />
+
+            <!-- Şehir Listesi -->
+            <CollectionView x:Name="CityCollectionView" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource CityFrameStyle}">
+                            <VerticalStackLayout>
+                                <!-- Şehir İsmi -->
+                                <Label Text="{Binding Name}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="{DynamicResource PrimaryTextColor}" />
+
+                                <!-- WebView: Hava Durumu Kaynağı -->
+                                <WebView Source="{Binding Source}"
+                                         HeightRequest="200"
+                                         HorizontalOptions="FillAndExpand" />
+
+                                <!-- Şehir Sil Butonu -->
+                                <Button Text="Şehri Sil"
+                                        BackgroundColor="{DynamicResource DeleteButtonColor}"
+                                        TextColor="{DynamicResource ButtonTextColor}"
+                                        CornerRadius="10"
+                                        HeightRequest="40"
+                                        CommandParameter="{Binding .}"
+                                        Clicked="OnDeleteCityClicked" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

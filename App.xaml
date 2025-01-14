@@ -1,0 +1,27 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Açık Tema -->
+            <Color x:Key="PrimaryTextColor">#000000</Color>
+            <Color x:Key="SecondaryTextColor">#666666</Color>
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+            <Color x:Key="CardBackgroundColor">#F9F9F9</Color>
+            <Color x:Key="ButtonBackgroundColor">#4CAF50</Color>
+            <Color x:Key="EditButtonColor">#1976D2</Color>
+            <Color x:Key="DeleteButtonColor">#D32F2F</Color>
+            <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+
+            <!-- Koyu Tema -->
+            <Color x:Key="PrimaryTextColorDark">#FFFFFF</Color>
+            <Color x:Key="SecondaryTextColorDark">#BBBBBB</Color>
+            <Color x:Key="BackgroundColorDark">#121212</Color>
+            <Color x:Key="CardBackgroundColorDark">#1E1E1E</Color>
+            <Color x:Key="ButtonBackgroundColorDark">#4CAF50</Color>
+            <Color x:Key="EditButtonColorDark">#2196F3</Color>
+            <Color x:Key="DeleteButtonColorDark">#F44336</Color>
+            <Color x:Key="ButtonTextColorDark">#FFFFFF</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
